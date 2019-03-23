@@ -8,7 +8,7 @@ import java.util.Collections;
 // for temporary store, fake db
 public class TransformerRegistration{
   private List<Transformer> transformerRecords;
-
+  static int number = 1;
   private static TransformerRegistration transReg= null;
   
   private TransformerRegistration() {
@@ -39,7 +39,7 @@ public class TransformerRegistration{
 			&& (trans.getRank() >= 1 && trans.getRank() <= 10)
 			&& (trans.getCourage() >= 1 && trans.getCourage() <= 10)
 			&& (trans.getSkill() >= 1 && trans.getSkill() <= 10)) {	
-		  trans.setNum(this.transformerRecords.size());
+		  trans.setNum(++number);
 		  transformerRecords.add(trans);
 		  response = new TransformerResponse("OK","Add Success");
 	  } else {
